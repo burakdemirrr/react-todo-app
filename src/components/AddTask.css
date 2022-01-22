@@ -1,0 +1,48 @@
+
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+
+.titl{
+    color:#ffffff;
+    font-size:2.2rem;
+    padding:10px 30px;
+}
+.container{
+    display:flex;
+    padding:10px 30px;
+    align-items:center;
+
+}
+.input_container{
+    flex:1;
+}
+input{
+    width:100%;
+    height:45px;
+    bordeR:none;
+    align-items: center;
+    padding:0px 15px;
+    outline:none;
+    color:White;
+    background-color:rgba(61, 94, 121, 0.37);
+    font-size:1.1reM;
+}
+input::placeholder{
+    font-size:1.1reM;
+}
+.haha{
+    cursor:pointer;
+    margin-left:10px;
+    margin-top: 2px;
+    padding:6px;
+    color:white;
+    border:none;
+    background-color:rgb(126, 84, 84);
+}
+.haha:hover{
+    background-color:white;
+    color:rgb(126, 84, 84);
+    transition:1000ms;
+}
