@@ -10,8 +10,11 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const AddTask = ({tasks}) => {
 
-    const [title,setTitle]=useState('');
+    const [formdata,setFormData]=useState({
+        title:"",
+    });
     const handleSubmit = async (e)=>{
+        const title=formdata.title;
         e.preventDefault();
         if(!title){
             return toast.warning("This cant be empty.");
@@ -23,7 +26,11 @@ const AddTask = ({tasks}) => {
             title,
             createdAt:new Date(),
         });
-        setTitle('');
+        setFormData({...formdata,title:""});
+    }
+
+    const handleInputs=(e)=>{
+        setFormData({...formdata,[e.target.name]:e.target.value})
     }
 
  
@@ -32,8 +39,8 @@ const AddTask = ({tasks}) => {
                 <h3 className="titl">To-Do App</h3>
                 <div className="container">
                 <div className="input_container">
-                    <input type="text" placeholder="Add your new To-do"
-                    value={title} onChange={(e)=>setTitle(e.target.value)}
+                    <input type="text" placeholder="Add your new To-do" name="title"
+                    value={formdata.title} onChange={(e)=>handleInputs(e)}
                     />
                 </div>
             <div className="btn_container">
